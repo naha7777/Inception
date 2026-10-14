@@ -32,3 +32,7 @@ _This project has been created as part of the 42 curriculum by anacharp._
 [MariaDB](https://mariadb.org/fr/)\
 [WordPress](https://verycloud.fr/docs/article/wordpress-debian13)\
 [PHP](https://kinsta.com/fr/blog/qu-est-ce-que-php/)
+
+## Questionnements et modifs:
+- changer les ports car seulement nginx doit etre relié au 443 (d'ailleurs POURQUOI?)
+- c'est quoi la diff entre TLSv1.2 et TLSv1.3 et pourquoi on peut utiliser les deux oklm ?
