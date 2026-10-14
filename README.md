@@ -17,6 +17,7 @@ _This project has been created as part of the 42 curriculum by anacharp._
 ### Docker Volumes vs Bind Mounts
 
 ## Resources
+[Debian](https://www.debian.org/distrib/)\
 [Docker](https://www.nicelydev.com/docker/mots-cles-supplementaires-dockerfile#:~:text=Le%20mot%2Dcl%C3%A9%20EXPOSE%20permet,utiliser%20l'option%20%2Dp%20)\
 [Inception Tutorial](https://inception.cluzet.fr/)\
 [Inception 42 project guide](https://github.com/azedineouhadou/inception-42)\
@@ -30,4 +31,4 @@ _This project has been created as part of the 42 curriculum by anacharp._
 [Nginx](https://www.ovhcloud.com/fr/learn/what-is-nginx/)\
 [MariaDB](https://mariadb.org/fr/)\
 [WordPress](https://verycloud.fr/docs/article/wordpress-debian13)\
-[PHP](https://kinsta.com/fr/blog/qu-est-ce-que-php/)\
+[PHP](https://kinsta.com/fr/blog/qu-est-ce-que-php/)
