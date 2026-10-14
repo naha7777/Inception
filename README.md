@@ -20,6 +20,7 @@ _This project has been created as part of the 42 curriculum by anacharp._
 [Debian](https://www.debian.org/distrib/)\
 [Docker](https://www.nicelydev.com/docker/mots-cles-supplementaires-dockerfile#:~:text=Le%20mot%2Dcl%C3%A9%20EXPOSE%20permet,utiliser%20l'option%20%2Dp%20)\
 [Inception Tuto FR](https://inception.cluzet.fr/)\
+[Docker bonnes pratiques](https://librecours.net/modules/picasoft/run/dk02/solweb/co/dk02_1.html)\
 [Inception 42 project guide](https://github.com/azedineouhadou/inception-42)\
 [Guide to Dockerizing Your First Infrastructure](https://devabdilah.medium.com/inception-42-a-comprehensive-guide-to-dockerizing-your-first-infrastructure-part-iii-a10e93e9d922)\
 [Inception Github](https://github.com/Forstman1/inception-42)\
