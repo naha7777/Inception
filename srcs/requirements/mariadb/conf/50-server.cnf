@@ -1,5 +1,5 @@
 [mysqld]
-port = 443
+port = 3306
 bind_address = *
 datadir = /var/lib/mysql
 user = mysql
