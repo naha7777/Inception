@@ -1,9 +1,7 @@
 FROM	debian:bookworm
 
 # installation de nginx
-RUN		apt-get update
-RUN		apt-get upgrade -y
-RUN		apt-get install nginx -y
+RUN		apt-get update -y && apt-get upgrade -y && apt-get install nginx -y
 
 # génerer un certificat et une clé TSL
 RUN		mkdir -p /etc/nginx/ssl
@@ -22,7 +20,7 @@ RUN		mkdir -p /var/www/html
 RUN		chmod 755 /var/www/html
 RUN		chown -R www-data:www-data /var/www/html
 
-EXPOSE 443
+EXPOSE	443
 
 # lancer NGINX
 CMD		[ "nginx", "-g", "daemon off;" ]
