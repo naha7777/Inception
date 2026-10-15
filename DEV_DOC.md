@@ -34,12 +34,10 @@ Inception/
     ├── .env.example          # template
     ├── docker-compose.yml
     └── requirements/
-        ├── nginx/            # Dockerfile + conf + tools
+        ├── nginx/            # Dockerfile + conf
         ├── wordpress/        # Dockerfile + conf + setup script
         └── mariadb/          # Dockerfile + conf + setup script
 ```
-
-(Adapt this tree to your real folders.)
 
 - **Makefile**: entry point, wraps the Docker Compose commands.
 - **docker-compose.yml**: declares the services, the network, the volumes and the environment.
