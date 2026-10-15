@@ -10,14 +10,14 @@ services:
       dockerfile: Dockerfile
       env_file: .env
       volumes:
-      - mariadb:/var/lib/mysql
+      - mariadb: /var/lib/mysql
       restart: unless-stopped
       expose:
       - "3306"
     nginx:
       container_name: nginx
       volumes:
-      - wordpress:/var/www/wordpress
+      - wordpress: /var/www/wordpress
       networks:
       - inception
       depends_on:
@@ -32,7 +32,7 @@ services:
     wordpress:
       container_name: wordpress
       env_file: .env
-      volumes:/var/www/wordpress
+      volumes: /var/www/wordpress
       networks:
       - inception
       build:
@@ -44,3 +44,20 @@ services:
       expose:
       - "9000"
 
+volumes:
+    wordpress:
+      driver: local
+      driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/Users/login/data/wordpress'
+    mariadb:
+      driver: local
+      driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/Users/login/data/mariadb'
+
+networks:
+    inception:
+    driver: bridge
