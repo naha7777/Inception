@@ -6,7 +6,7 @@ RUN		apt-get update -y && apt-get upgrade -y \
 
 # change mariadb configuration
 COPY	conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
-COPY	create_database.sh /app/create_database.sh
+COPY	tools/create_database.sh /app/create_database.sh
 RUN		chmod +x /app/create_database.sh
 
 # listen port 3306
