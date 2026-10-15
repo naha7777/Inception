@@ -200,11 +200,6 @@ docker volume prune
 
 These two directories are mounted into the containers, so the data **survives** `make stop`, `make start` and even the deletion of the containers. It is only erased when the host directories are removed (`make fclean` or `sudo rm -rf /home/anacharp/data`).
 
-Quick persistence test:
-1. Create a post or a comment on the website.
-2. Run `make stop`, then `make start`.
-3. Check that the post is still there.
-
 Note that the values from `.env` are only used during the first installation. If you change them afterwards, you must erase the data (`make fclean`) and rebuild.
 
 ## Cleanup
