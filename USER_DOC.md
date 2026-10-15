@@ -22,7 +22,7 @@ All commands are run from the root of the `Inception` folder, on the virtual mac
 |---|---|
 | Build and start everything | `make` |
 | Stop the stack (data is kept) | `make stop` |
-| Restart after a stop | `make restart` |
+| Restart after a stop | `make start` |
 | Remove everything, including the data | `make fclean` |
 
 > **Warning:** `make fclean` deletes the website and database content. Use it only when you want to start from scratch.
