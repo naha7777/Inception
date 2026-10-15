@@ -100,6 +100,16 @@ docker exec -it nginx bash
 docker exec -it wordpress bash
 docker exec -it mariadb bash
 
+# List the processes running inside a container
+docker top nginx
+docker top wordpress
+docker top mariadb
+
+# Run a single command inside a running container
+docker exec nginx ls /etc/nginx
+docker exec wordpress ls /var/www/html
+docker exec mariadb ls /var/lib/mysql
+
 # Stop and remove the containers and the network (volumes are kept)
 docker compose -f srcs/docker-compose.yml down
 ```
