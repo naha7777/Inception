@@ -29,7 +29,7 @@ make stop
 
 To restart after a stop:
 ```bash
-make restart
+make start
 ```
 
 ## Checks
