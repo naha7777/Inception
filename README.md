@@ -3,17 +3,19 @@ _This project has been created as part of the 42 curriculum by anacharp._
 # Inception
 
 ## Description
-Inception is a Docker project. We have to create images about nginx, mariadb and wordpress et use Docker Compose to launch them and connect them in the best way.
+Inception is a system administration project built around Docker. It consists of building our own Docker images for NGINX, MariaDB and WordPress (with php-fpm), then using Docker Compose to launch them and connect them together through a dedicated network, with persistent storage for the website files and the database.
 
 First what is Docker ?\
 Docker is...
 
 ## Instructions
-Je peux me connecter en SSH à ma VM depuis ma machine hote, c'est de la que je peux git clone le projet.\
-Ensuite on peut créer le .env en suivant l'example du `.env.example` en veillant à bien mettre `@` pour les adresses emails sinon cela ne fonctionnera pas.\
-Enfin on peut se rendre directement dans la vm pour faire nos tests.\
-Tout d'abord se mettre en sudo et supprimer le dossier `data` si il existe.\
-Puis se rendre dans notre dossier `Inception` que nous venons de cloner.\
+You can connect to the virtual machine over SSH from the host machine and clone the project from there.
+
+1. Clone the repository.
+2. Create the `.env` file in `srcs/`, following the `.env.example` template. Make sure the email addresses contain an `@`, otherwise WordPress will not install correctly.
+3. Connect to the virtual machine to run the tests.
+4. Using `sudo`, remove the `data` folder if it already exists.
+5. Go to the cloned `Inception` folder.
 Nous pouvons maintenant lancer le programme avec :
 ```bash
 make
