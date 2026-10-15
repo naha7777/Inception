@@ -15,13 +15,7 @@ RUN			apt-get install -y php8.2\
 			php-zip\
 			curl\
 			mariadb-client
-# install wordpress thanks to wget
-RUN			wget https://fr.wordpress.org/wordpress-6.0-fr_FR.tar.gz -P /var/www
-# unzip wordpress
-RUN			cd /var/www && tar -xzf wordpress-6.0-fr_FR.tar.gz \
-			&& rm wordpress-6.0-fr_FR.tar.gz
-# give permissions to root
-RUN			chown -R root:root /var/www/wordpress
+
 # change php-fpm config
 RUN			sed -i 's|^listen = .*|listen = 9000|' /etc/php/8.2/fpm/pool.d/www.conf \
 			&& echo "clear_env = no" >> /etc/php/8.2/fpm/pool.d/www.conf
