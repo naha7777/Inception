@@ -6,6 +6,39 @@ _This project has been created as part of the 42 curriculum by anacharp._
 
 ## Instructions
 
+```bash
+make
+```
+or
+```bash
+sudo mkdir -p /home/anacharp/data/wordpress
+sudo mkdir -p /home/anacharp/data/mariadb
+docker compose -f srcs/docker-compose.yml up -d --build
+```
+```bash
+make start
+```
+
+Check the html:
+```bash
+curl -k https://anacharp.42.fr
+```
+
+Check logs:
+```bash
+docker compose -f srcs/docker-compose.yml logs
+```
+
+Check all users, their mails and roles:
+```bash
+docker exec -it wordpress wp user list --allow-root --path=/var/www/html
+```
+
+Check users, their IDs, logins and roles:
+```bash
+docker exec wordpress wp user list --allow-root --path=/var/www/html --fields=ID,user_login,roles
+```
+
 ## Project Description
 
 ### Virtual Machines vs Docker
@@ -33,10 +66,3 @@ _This project has been created as part of the 42 curriculum by anacharp._
 [MariaDB](https://mariadb.org/fr/)\
 [WordPress](https://verycloud.fr/docs/article/wordpress-debian13)\
 [PHP](https://kinsta.com/fr/blog/qu-est-ce-que-php/)
-
-## Questionnements et modifs:
-- changer les ports car seulement nginx doit etre relié au 443 (d'ailleurs POURQUOI?)
-- c'est quoi la diff entre TLSv1.2 et TLSv1.3 et pourquoi on peut utiliser les deux oklm ?
-- nginx -g daemon off : ca fait quoi exactement ?
-- c'est quoi wget, php...
-- c'est quoi daemon

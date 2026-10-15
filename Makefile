@@ -1,7 +1,8 @@
 COMPOSE = docker compose -f srcs/docker-compose.yml
 
 all:
-	mkdir -p /home/anacharp/data/wordpress /home/anacharp/data/mariadb
+	sudo mkdir -p /home/anacharp/data/wordpress
+	sudo mkdir -p /home/anacharp/data/mariadb
 	$(COMPOSE) up -d --build
 
 stop:
@@ -15,7 +16,8 @@ down:
 
 fclean:
 	$(COMPOSE) down -v
-	sudo rm -rf /home/anacharp/data/mariadb/* /home/anacharp/data/wordpress/*
+	sudo rm -rf /home/anacharp/data/mariadb/*
+	sudo rm -rf /home/anacharp/data/wordpress/*
 
 re: fclean all
 
