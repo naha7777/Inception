@@ -3,9 +3,18 @@ _This project has been created as part of the 42 curriculum by anacharp._
 # Inception
 
 ## Description
+Inception is a Docker project. We have to create images about nginx, mariadb and wordpress et use Docker Compose to launch them and connect them in the best way.
+
+First what is Docker ?\
+Docker is...
 
 ## Instructions
-
+Je peux me connecter en SSH à ma VM depuis ma machine hote, c'est de la que je peux git clone le projet.\
+Ensuite on peut créer le .env en suivant l'example du `.env.example` en veillant à bien mettre `@` pour les adresses emails sinon cela ne fonctionnera pas.\
+Enfin on peut se rendre directement dans la vm pour faire nos tests.\
+Tout d'abord se mettre en sudo et supprimer le dossier `data` si il existe.\
+Puis se rendre dans notre dossier `Inception` que nous venons de cloner.\
+Nous pouvons maintenant lancer le programme avec :
 ```bash
 make
 ```
@@ -15,10 +24,12 @@ sudo mkdir -p /home/anacharp/data/wordpress
 sudo mkdir -p /home/anacharp/data/mariadb
 docker compose -f srcs/docker-compose.yml up -d --build
 ```
+Puis :
 ```bash
 make start
 ```
 
+Ensuite on a la possibilité de :
 Check the html:
 ```bash
 curl -k https://anacharp.42.fr
@@ -39,7 +50,19 @@ Check users, their IDs, logins and roles:
 docker exec wordpress wp user list --allow-root --path=/var/www/html --fields=ID,user_login,roles
 ```
 
+Check ports:
+```bash
+sudo ss -tlnp | grep -E ':80|:443'
+```
+
+Nous pouvons également ouvrir un navigateur de rechercher et mettre l'un de ces liens :
+- `https://localhost:443`
+- `https://anacharp.42.fr`
+
+Enfin, il ne faut pas oublier d'utiliser la commande `make fclean` quand on a terminé.
+
 ## Project Description
+Section must also explain the use of Docker and the sources included in the project. It must indicate the main design choices, as well as a comparison between
 
 ### Virtual Machines vs Docker
 
