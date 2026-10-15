@@ -9,6 +9,7 @@ First what is Docker ?\
 Docker is...
 
 ## Instructions
+### Setup
 You can connect to the virtual machine over SSH from the host machine and clone the project from there.
 
 1. Clone the repository.
@@ -16,52 +17,75 @@ You can connect to the virtual machine over SSH from the host machine and clone 
 3. Connect to the virtual machine to run the tests.
 4. Using `sudo`, remove the `data` folder if it already exists.
 5. Go to the cloned `Inception` folder.
-Nous pouvons maintenant lancer le programme avec :
+
+### Launch
+
 ```bash
 make
 ```
-or
+
+which is equivalent to:
+
 ```bash
 sudo mkdir -p /home/anacharp/data/wordpress
 sudo mkdir -p /home/anacharp/data/mariadb
 docker compose -f srcs/docker-compose.yml up -d --build
 ```
-Puis :
+
+To stop:
+
 ```bash
-make start
+make stop
 ```
 
-Ensuite on a la possibilité de :
-Check the html:
+To restart after a stop:
+```bash
+make restart
+```
+
+### Checks
+
+Check the HTML served by NGINX:
+
 ```bash
 curl -k https://anacharp.42.fr
 ```
 
-Check logs:
+Check the logs:
+
 ```bash
 docker compose -f srcs/docker-compose.yml logs
 ```
 
-Check all users, their mails and roles:
+List all WordPress users with their emails and roles:
+
 ```bash
 docker exec -it wordpress wp user list --allow-root --path=/var/www/html
 ```
 
-Check users, their IDs, logins and roles:
+List the users with their IDs, logins and roles only:
+
 ```bash
 docker exec wordpress wp user list --allow-root --path=/var/www/html --fields=ID,user_login,roles
 ```
 
-Check ports:
+Check the open ports:
+
 ```bash
 sudo ss -tlnp | grep -E ':80|:443'
 ```
 
-Nous pouvons également ouvrir un navigateur de rechercher et mettre l'un de ces liens :
+You can also open a browser and go to one of these addresses:
 - `https://localhost:443`
 - `https://anacharp.42.fr`
 
-Enfin, il ne faut pas oublier d'utiliser la commande `make fclean` quand on a terminé.
+### Cleanup
+
+When you are done, run:
+
+```bash
+make fclean
+```
 
 ## Project Description
 Section must also explain the use of Docker and the sources included in the project. It must indicate the main design choices, as well as a comparison between
@@ -75,6 +99,7 @@ Section must also explain the use of Docker and the sources included in the proj
 ### Docker Volumes vs Bind Mounts
 
 ## Resources
+### Documentation and references
 [Debian](https://www.debian.org/distrib/)\
 [Docker](https://www.nicelydev.com/docker/mots-cles-supplementaires-dockerfile#:~:text=Le%20mot%2Dcl%C3%A9%20EXPOSE%20permet,utiliser%20l'option%20%2Dp%20)\
 [Inception Tuto FR](https://inception.cluzet.fr/)\
@@ -91,3 +116,11 @@ Section must also explain the use of Docker and the sources included in the proj
 [MariaDB](https://mariadb.org/fr/)\
 [WordPress](https://verycloud.fr/docs/article/wordpress-debian13)\
 [PHP](https://kinsta.com/fr/blog/qu-est-ce-que-php/)
+
+### Use of AI
+An AI assistant was used as a support tool during this project, mainly for:
+- **Troubleshooting the environment**: VirtualBox display and disk-space errors, the Debian installation, Docker installation and permission issues, and port forwarding between the host and the VM.
+- **Debugging**: reading build errors and container logs, and finding typos and syntax mistakes in Dockerfiles, shell scripts (MariaDB initialization, WP-CLI auto-configuration) and `nginx.conf`.
+- **Understanding concepts**: how `docker-compose.yml` fits together, why a bind-mounted volume hides the content of an image, PID 1 and daemons (`nginx -g "daemon off;"`, `php-fpm -F`), and the differences between TLSv1.2 and TLSv1.3.
+- **Verification**: checking the project against the subject requirements (volumes, network, ports, tags, WordPress users) and commands to verify the setup.
+- **Documentation**: proofreading and translating this README.
