@@ -119,8 +119,8 @@ Section must also explain the use of Docker and the sources included in the proj
 
 ### Use of AI
 An AI assistant was used as a support tool during this project, mainly for:
-- **Troubleshooting the environment**: VirtualBox display and disk-space errors, the Debian installation, Docker installation and permission issues, and port forwarding between the host and the VM.
-- **Debugging**: reading build errors and container logs, and finding typos and syntax mistakes in Dockerfiles, shell scripts (MariaDB initialization, WP-CLI auto-configuration) and `nginx.conf`.
-- **Understanding concepts**: how `docker-compose.yml` fits together, why a bind-mounted volume hides the content of an image, PID 1 and daemons (`nginx -g "daemon off;"`, `php-fpm -F`), and the differences between TLSv1.2 and TLSv1.3.
-- **Verification**: checking the project against the subject requirements (volumes, network, ports, tags, WordPress users) and commands to verify the setup.
+- **Port forwarding** between the host and the VM.
+- **Debugging**: finding typos and syntax mistakes in Dockerfiles and shell scripts.
+- **Understanding concepts**: why a bind-mounted volume hides the content of an image, PID 1 and daemons.
+- **Verification**: commands to verify the setup.
 - **Documentation**: proofreading and translating this README.
