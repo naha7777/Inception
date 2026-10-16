@@ -6,7 +6,7 @@ until mysqladmin ping -h mariadb -u"$SQL_USER" -p"$SQL_PASSWORD" --silent; do
 done
 
 # directory for php-fpm
-mkdir -p /run/php /var/www/html
+mkdir -p /var/www/html
 cd /var/www/html
 
 if [ ! -f wp-config.php ]; then
