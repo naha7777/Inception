@@ -4,6 +4,9 @@
 port = 3306
 # Network addresses on which MariaDB accepts connections
 bind_address = 0.0.0.0
+# Directory where MariaDB stores databases.
 datadir = /var/lib/mysql
+# System user under which the server runs (not root, for security reasons)
 user = mysql
+# Local communication file
 socket = /run/mysqld/mysqld.sock
