@@ -1,5 +1,8 @@
+# Section concerning the MariaDB server (the mysqld daemon)
 [mysqld]
+# The standard MySQL/MariaDB port
 port = 3306
+# Network addresses on which MariaDB accepts connections
 bind_address = 0.0.0.0
 datadir = /var/lib/mysql
 user = mysql
