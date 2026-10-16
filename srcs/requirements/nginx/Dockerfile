@@ -16,11 +16,10 @@ RUN		openssl req -x509 -nodes \
 		-keyout /etc/nginx/ssl/inception.key \
 		-subj "/C=FR/ST=IDF/L=Paris/O=42/OU=42/CN=anacharp.42.fr/UID=anacharp"
 
-# create a directory on /var/run
-RUN		mkdir -p /var/run/nginx
+# Replace the nginx default config with my nginx config
 COPY	conf/nginx.conf /etc/nginx/nginx.conf
 
-# check permissions
+# check permissions for the web directory where wordpress install files
 RUN		mkdir -p /var/www/html
 RUN		chmod 755 /var/www/html
 RUN		chown -R www-data:www-data /var/www/html
