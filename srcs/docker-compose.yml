@@ -28,7 +28,6 @@ services:
   nginx:
     container_name: nginx
     build: requirements/nginx
-    env_file: .env
     volumes:
       - wordpress:/var/www/html
     networks:
