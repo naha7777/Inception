@@ -3,7 +3,7 @@ FROM	debian:bookworm
 # nginx setup
 RUN		apt-get update -y && apt-get upgrade -y && apt-get install nginx -y
 
-# TSL key and certificate generation
+# TLS key and certificate generation
 RUN		mkdir -p /etc/nginx/ssl
 RUN		apt-get install openssl -y
 RUN		openssl req -x509 -nodes \
